@@ -3,10 +3,10 @@ AIGC:
   ContentProducer: '001191110102MAD55U9H0F10002'
   ContentPropagator: '001191110102MAD55U9H0F10002'
   Label: '1'
-  ProduceID: '595f35b8-f899-49d0-9db8-3ff30344cce2'
-  PropagateID: '595f35b8-f899-49d0-9db8-3ff30344cce2'
-  ReservedCode1: '7ba97a80-a830-447c-aee5-c5f2abfa3279'
-  ReservedCode2: '7ba97a80-a830-447c-aee5-c5f2abfa3279'
+  ProduceID: '297c25f5-6803-4fea-9018-2d73911addd4'
+  PropagateID: '297c25f5-6803-4fea-9018-2d73911addd4'
+  ReservedCode1: 'eb14fcc3-b3f8-49c0-a12c-ce8d6b8762ab'
+  ReservedCode2: 'eb14fcc3-b3f8-49c0-a12c-ce8d6b8762ab'
 ---
 
 # WenFengWenGu Privacy Policy

@@ -3,10 +3,10 @@ AIGC:
   ContentProducer: '001191110102MAD55U9H0F10002'
   ContentPropagator: '001191110102MAD55U9H0F10002'
   Label: '1'
-  ProduceID: '7d3ef6bc-6fb9-4535-a0be-1d3d169072a6'
-  PropagateID: '7d3ef6bc-6fb9-4535-a0be-1d3d169072a6'
-  ReservedCode1: 'dd82b410-67e0-44a3-a96d-a5781df45630'
-  ReservedCode2: 'dd82b410-67e0-44a3-a96d-a5781df45630'
+  ProduceID: '618bb69e-be1a-4cc9-acd5-5354e13c03c7'
+  PropagateID: '618bb69e-be1a-4cc9-acd5-5354e13c03c7'
+  ReservedCode1: '0090174d-2a26-456f-bd92-8655c4f716e9'
+  ReservedCode2: '0090174d-2a26-456f-bd92-8655c4f716e9'
 ---
 
 # 文峰文谷 (WenFengWenGu)
