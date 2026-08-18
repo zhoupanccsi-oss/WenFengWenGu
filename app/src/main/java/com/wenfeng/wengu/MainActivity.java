@@ -1,7 +1,6 @@
 package com.wenfeng.wengu;
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -21,18 +20,14 @@ import java.util.TimeZone;
 
 /**
  * Main screen — permission request + start/stop service + real-time status display.
- * Free 30-minute trial, then one-time Google Play purchase to unlock.
+ * 100% free tool, no in-app purchase.
  */
 public class MainActivity extends AppCompatActivity {
 
     private TextView tvStatus;
     private TextView tvPeriod;
-    private TextView tvUnlockStatus;
     private Button btnToggle;
-    private Button btnUnlock;
     private boolean isRunning = false;
-
-    private BillingManager billingManager;
 
     // Refresh period info in real time
     private final android.os.Handler handler = new android.os.Handler(android.os.Looper.getMainLooper());
@@ -40,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void run() {
             updatePeriodInfo();
-            updateUnlockStatus();
             handler.postDelayed(this, 1000);
         }
     };
@@ -52,55 +46,13 @@ public class MainActivity extends AppCompatActivity {
 
         tvStatus = findViewById(R.id.tvStatus);
         tvPeriod = findViewById(R.id.tvPeriod);
-        tvUnlockStatus = findViewById(R.id.tvUnlockStatus);
         btnToggle = findViewById(R.id.btnToggle);
-        btnUnlock = findViewById(R.id.btnUnlock);
-
-        // Initialize billing
-        billingManager = new BillingManager(this, new BillingManager.BillingCallback() {
-            @Override
-            public void onPurchased() {
-                Toast.makeText(MainActivity.this,
-                        getString(R.string.purchase_success), Toast.LENGTH_LONG).show();
-                updateUnlockUI();
-            }
-
-            @Override
-            public void onPurchaseFailed(String message) {
-                Toast.makeText(MainActivity.this,
-                        getString(R.string.purchase_failed), Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onBillingReady() {
-                // Billing is ready, product details loading
-            }
-
-            @Override
-            public void onBillingUnavailable() {
-                // No Google Play — hide unlock button
-                btnUnlock.setVisibility(android.view.View.GONE);
-            }
-        });
-        billingManager.startConnection();
 
         btnToggle.setOnClickListener(v -> {
             if (isRunning) {
                 stopService();
             } else {
-                // Check if trial expired and not unlocked
-                if (!BillingManager.isTrialValid(this) && !BillingManager.isUnlocked(this)) {
-                    Toast.makeText(this,
-                            getString(R.string.trial_expired), Toast.LENGTH_LONG).show();
-                    return;
-                }
                 requestPermissionsAndStart();
-            }
-        });
-
-        btnUnlock.setOnClickListener(v -> {
-            if (billingManager != null) {
-                billingManager.launchPurchaseFlow(this);
             }
         });
 
@@ -108,8 +60,6 @@ public class MainActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             requestNotificationPermission();
         }
-
-        updateUnlockUI();
     }
 
     @Override
@@ -127,9 +77,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (billingManager != null) {
-            billingManager.endConnection();
-        }
     }
 
     private void requestPermissionsAndStart() {
@@ -191,34 +138,6 @@ public class MainActivity extends AppCompatActivity {
             tvStatus.setText(getString(R.string.stopped));
             tvStatus.setTextColor(getResources().getColor(android.R.color.darker_gray));
             btnToggle.setText(getString(R.string.start_border));
-        }
-    }
-
-    private void updateUnlockUI() {
-        if (BillingManager.isUnlocked(this)) {
-            btnUnlock.setVisibility(android.view.View.GONE);
-            tvUnlockStatus.setText(getString(R.string.btn_purchased));
-            tvUnlockStatus.setTextColor(getResources().getColor(android.R.color.holo_green_dark));
-        } else if (BillingManager.isTrialValid(this)) {
-            btnUnlock.setVisibility(android.view.View.VISIBLE);
-            tvUnlockStatus.setText("");
-        } else {
-            btnUnlock.setVisibility(android.view.View.VISIBLE);
-            tvUnlockStatus.setText(getString(R.string.trial_expired));
-            tvUnlockStatus.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
-        }
-    }
-
-    private void updateUnlockStatus() {
-        if (BillingManager.isUnlocked(this)) return;
-        int minutes = BillingManager.getTrialMinutesRemaining(this);
-        if (minutes > 0) {
-            tvUnlockStatus.setText(getString(R.string.trial_remaining, minutes));
-            tvUnlockStatus.setTextColor(getResources().getColor(android.R.color.holo_orange_dark));
-        } else if (minutes == 0) {
-            tvUnlockStatus.setText(getString(R.string.trial_expired));
-            tvUnlockStatus.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
-            btnUnlock.setVisibility(android.view.View.VISIBLE);
         }
     }
 
