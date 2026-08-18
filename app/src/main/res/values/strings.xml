@@ -2,4 +2,24 @@
 <resources>
     <string name="app_name">WenFengWenGu</string>
     <string name="rule_text">Peak Hours (Red Border)\n  Morning  09:00 — 12:00\n  Afternoon  14:00 — 18:00\n\nOff-Peak Hours (Green Border)\n  All other times\n  Priced at 50% of peak rate</string>
+    <string name="start_border">Start Border</string>
+    <string name="stop_border">Stop Border</string>
+    <string name="border_status">Border Status:</string>
+    <string name="running">Running</string>
+    <string name="stopped">Stopped</string>
+    <string name="unlock_title">Unlock Full Version</string>
+    <string name="unlock_desc">Free trial: 30 minutes.\nAfter that, unlock forever for a small one-time fee.</string>
+    <string name="btn_unlock">Unlock Full Version</string>
+    <string name="btn_purchased">Full Version Unlocked</string>
+    <string name="trial_remaining">Trial: %d min remaining</string>
+    <string name="trial_expired">Trial expired. Unlock to continue.</string>
+    <string name="grant_overlay">Please grant \"Display over other apps\" permission, then tap Start again</string>
+    <string name="overlay_not_granted">Overlay permission not granted, cannot start</string>
+    <string name="border_started">Border started</string>
+    <string name="border_stopped">Border stopped</string>
+    <string name="purchase_success">Full version unlocked! Thank you!</string>
+    <string name="purchase_failed">Purchase failed. Please try again.</string>
+    <string name="billing_unavailable">Billing unavailable. Make sure Google Play is installed.</string>
+    <string name="pricing_rules">Pricing Rules (Beijing time UTC+8)</string>
+    <string name="loading_time">Loading time...</string>
 </resources>

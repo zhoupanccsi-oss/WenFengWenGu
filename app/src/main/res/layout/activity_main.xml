@@ -36,7 +36,7 @@
         android:id="@+id/tvPeriod"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Loading time..."
+        android:text="@string/loading_time"
         android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="#4CAF50"
@@ -49,12 +49,12 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:layout_marginBottom="32dp">
+        android:layout_marginBottom="16dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Border Status: "
+            android:text="@string/border_status"
             android:textSize="15sp"
             android:textColor="#666666" />
 
@@ -62,29 +62,52 @@
             android:id="@+id/tvStatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Stopped"
+            android:text="@string/stopped"
             android:textSize="15sp"
             android:textStyle="bold"
             android:textColor="#AAAAAA" />
 
     </LinearLayout>
 
+    <!-- Trial / Unlock Status -->
+    <TextView
+        android:id="@+id/tvUnlockStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="13sp"
+        android:textColor="#FF9800"
+        android:gravity="center"
+        android:layout_marginBottom="20dp" />
+
     <!-- Start/Stop Button -->
     <Button
         android:id="@+id/btnToggle"
         android:layout_width="220dp"
         android:layout_height="52dp"
-        android:text="Start Border"
+        android:text="@string/start_border"
         android:textSize="16sp"
         android:textColor="#FFFFFF"
         android:backgroundTint="#3F51B5"
-        android:layout_marginBottom="40dp" />
+        android:layout_marginBottom="20dp" />
+
+    <!-- Unlock Button (hidden when purchased) -->
+    <Button
+        android:id="@+id/btnUnlock"
+        android:layout_width="220dp"
+        android:layout_height="44dp"
+        android:text="@string/btn_unlock"
+        android:textSize="14sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#FF9800"
+        android:layout_marginBottom="24dp"
+        android:visibility="gone" />
 
     <!-- Rule Description -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Pricing Rules (Beijing Time UTC+8)"
+        android:text="@string/pricing_rules"
         android:textSize="13sp"
         android:textColor="#777777"
         android:textStyle="bold"
@@ -100,21 +123,10 @@
         android:gravity="center"
         android:lineSpacingExtra="3dp" />
 
-    <!-- Spacer to push Donate button to bottom -->
+    <!-- Spacer -->
     <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
-
-    <!-- Donate Button -->
-    <Button
-        android:id="@+id/btnDonate"
-        android:layout_width="180dp"
-        android:layout_height="44dp"
-        android:text="Donate 0.05 RMB"
-        android:textSize="13sp"
-        android:textColor="#666666"
-        android:backgroundTint="#F0F0F0"
-        android:layout_marginBottom="8dp" />
 
 </LinearLayout>

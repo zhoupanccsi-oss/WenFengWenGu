@@ -242,7 +242,7 @@ public class OverlayService extends Service {
         return new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setContentTitle("WenFengWenGu")
                 .setContentText(contentText)
-                .setSmallIcon(android.R.drawable.ic_dialog_info)
+                .setSmallIcon(R.drawable.ic_notification)
                 .setContentIntent(contentIntent)
                 .addAction(0, "Stop", stopPending)
                 .setOngoing(true)

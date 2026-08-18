@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WenFengWenGu</string>
+    <string name="rule_text">高峰时段（红色边框）\n  上午  09:00 — 12:00\n  下午  14:00 — 18:00\n\n空闲时段（绿色边框）\n  其余所有时间\n  价格为高峰时段的50%</string>
+    <string name="start_border">启动边框</string>
+    <string name="stop_border">停止边框</string>
+    <string name="border_status">边框状态：</string>
+    <string name="running">运行中</string>
+    <string name="stopped">已停止</string>
+    <string name="unlock_title">解锁完整版</string>
+    <string name="unlock_desc">免费试用30分钟。\n之后可一次性小额付费永久解锁。</string>
+    <string name="btn_unlock">解锁完整版</string>
+    <string name="btn_purchased">已解锁完整版</string>
+    <string name="trial_remaining">试用：剩余 %d 分钟</string>
+    <string name="trial_expired">试用已到期，请解锁后继续使用</string>
+    <string name="grant_overlay">请授予"显示在其他应用上层"权限，然后再次点击启动</string>
+    <string name="overlay_not_granted">未授予悬浮窗权限，无法启动</string>
+    <string name="border_started">边框已启动</string>
+    <string name="border_stopped">边框已停止</string>
+    <string name="purchase_success">完整版已解锁，感谢支持！</string>
+    <string name="purchase_failed">购买失败，请重试</string>
+    <string name="billing_unavailable">计费服务不可用，请确保已安装 Google Play</string>
+    <string name="pricing_rules">定价规则（北京时间 UTC+8）</string>
+    <string name="loading_time">时间加载中...</string>
+</resources>
