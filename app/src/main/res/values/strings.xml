@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WenFengWenGu</string>
+    <string name="rule_text">Peak Hours (Red Border)\n  Morning  09:00 — 12:00\n  Afternoon  14:00 — 18:00\n\nOff-Peak Hours (Green Border)\n  All other times\n  Priced at 50% of peak rate</string>
+</resources>

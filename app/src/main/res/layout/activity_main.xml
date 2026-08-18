@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:paddingStart="32dp"
+    android:paddingEnd="32dp"
+    android:paddingTop="60dp"
+    android:paddingBottom="24dp"
+    android:background="#FAFAFA">
+
+    <!-- App Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WenFengWenGu"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="4dp" />
+
+    <!-- Subtitle -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DeepSeek API Peak/Off-Peak Price Reminder\nby @zhoupanjjp"
+        android:textSize="13sp"
+        android:textColor="#999999"
+        android:gravity="center"
+        android:layout_marginBottom="36dp" />
+
+    <!-- Current Beijing Time + Period -->
+    <TextView
+        android:id="@+id/tvPeriod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Loading time..."
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#4CAF50"
+        android:gravity="center"
+        android:layout_marginBottom="28dp" />
+
+    <!-- Running Status -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="32dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Border Status: "
+            android:textSize="15sp"
+            android:textColor="#666666" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stopped"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="#AAAAAA" />
+
+    </LinearLayout>
+
+    <!-- Start/Stop Button -->
+    <Button
+        android:id="@+id/btnToggle"
+        android:layout_width="220dp"
+        android:layout_height="52dp"
+        android:text="Start Border"
+        android:textSize="16sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#3F51B5"
+        android:layout_marginBottom="40dp" />
+
+    <!-- Rule Description -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pricing Rules (Beijing Time UTC+8)"
+        android:textSize="13sp"
+        android:textColor="#777777"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/rule_text"
+        android:textSize="13sp"
+        android:textColor="#555555"
+        android:gravity="center"
+        android:lineSpacingExtra="3dp" />
+
+    <!-- Spacer to push Donate button to bottom -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Donate Button -->
+    <Button
+        android:id="@+id/btnDonate"
+        android:layout_width="180dp"
+        android:layout_height="44dp"
+        android:text="Donate 0.05 RMB"
+        android:textSize="13sp"
+        android:textColor="#666666"
+        android:backgroundTint="#F0F0F0"
+        android:layout_marginBottom="8dp" />
+
+</LinearLayout>
