@@ -3,10 +3,10 @@ AIGC:
   ContentProducer: '001191110102MAD55U9H0F10002'
   ContentPropagator: '001191110102MAD55U9H0F10002'
   Label: '1'
-  ProduceID: '618bb69e-be1a-4cc9-acd5-5354e13c03c7'
-  PropagateID: '618bb69e-be1a-4cc9-acd5-5354e13c03c7'
-  ReservedCode1: '0090174d-2a26-456f-bd92-8655c4f716e9'
-  ReservedCode2: '0090174d-2a26-456f-bd92-8655c4f716e9'
+  ProduceID: 'a2d58491-5296-427f-9201-523fb7b8acb0'
+  PropagateID: 'a2d58491-5296-427f-9201-523fb7b8acb0'
+  ReservedCode1: 'ff5bcf0b-072b-43ea-82ba-027bf50fe06e'
+  ReservedCode2: 'ff5bcf0b-072b-43ea-82ba-027bf50fe06e'
 ---
 
 # 文峰文谷 (WenFengWenGu)
@@ -23,7 +23,7 @@ DeepSeek API Peak/Off-Peak Price Reminder — Android App with dynamic screen bo
 - 后台/锁屏持续运行（前台服务保活）
 - 开机自动启动
 - 通知栏可随时停止
-- **免费试用 30 分钟**，之后可一次性小额付费永久解锁
+- **完全免费**，无广告、无内购、无订阅
 
 ## 技术架构
 
@@ -31,8 +31,7 @@ DeepSeek API Peak/Off-Peak Price Reminder — Android App with dynamic screen bo
 |------|------|
 | `BorderView.java` | 自定义 View，Canvas 绘制四边渐变色条 + ValueAnimator 呼吸动画 |
 | `OverlayService.java` | 前台服务，通过 WindowManager 添加全屏悬浮窗，每 30 秒检查时段 |
-| `BillingManager.java` | Google Play Billing 内购管理，30分钟试用 + 一次性买断解锁 |
-| `MainActivity.java` | 权限请求 + 启停服务 + 实时北京时间/时段显示 + 购买入口 |
+| `MainActivity.java` | 权限请求 + 启停服务 + 实时北京时间/时段显示 |
 | `BootReceiver.java` | 开机自启动 |
 
 ## 权限说明
@@ -49,7 +48,7 @@ DeepSeek API Peak/Off-Peak Price Reminder — Android App with dynamic screen bo
 
 - **平台**：Android 8.0 (API 26) 及以上，不支持 iOS/苹果设备
 - **安全提示**：本 App 未经过 Google Play 或其他应用市场验证，安装时系统会弹出安全警告，这是正常现象，解除限制即可。不放心可下载后先扫描再安装。
-- **APK 下载**：见 [Releases](../../releases) 页面
+- **APK 下载**：见 [Releases](https://github.com/zhoupanccsi-oss/WenFengWenGu/releases) 页面
 
 ## 使用方法
 
@@ -63,9 +62,8 @@ DeepSeek API Peak/Off-Peak Price Reminder — Android App with dynamic screen bo
 
 ## 付费说明
 
-- 新用户可免费试用 30 分钟
-- 试用结束后，通过 Google Play 内购一次性付费解锁完整版（永久有效）
-- 购买后所有功能无限制使用
+- **完全免费**，无广告、无内购、无订阅
+- 所有功能无限制使用
 
 ## 时段规则
 
@@ -114,7 +112,25 @@ KEY_PASSWORD=your_password
 
 - Android 8.0 (API 26) 及以上
 - 不需要任何网络权限
-- Google Play Billing（仅用于内购解锁）
+
+## Google Play Closed Testing — Join Us
+
+WenFengWenGu is being published on Google Play and currently needs **beta testers** to complete the closed-testing period (at least 12 testers for 14 days). This is a common Google requirement for new personal developer accounts.
+
+**It's completely free** — no ads, no in-app purchases, no subscriptions. No data is collected. Your device will only run a colored border around the screen edges.
+
+### How to join
+
+1. Open the test link on your Android device (Android 8.0+):
+   - Web: https://play.google.com/apps/testing/com.wenfeng.wengu
+   - Or open the Play Store page: https://play.google.com/store/apps/details?id=com.wenfeng.wengu
+2. Tap **"Join"** / **"Become a tester"**
+3. Tap **"Install"** / **"Download"** — the app will be installed from the Play Store
+4. That's it! You do NOT need to submit bugs or write reviews. Just keep the app installed for **14 days** (you don't even need to use it actively — installing and keeping it is enough).
+
+> The app only needs a "Display over other apps" permission to draw the border; it does **not** access the network or collect any data.
+
+Questions or feedback: [open an issue](../../issues) or email zhoupan.ccsi@gmail.com
 
 ## Privacy Policy
 
@@ -123,5 +139,3 @@ See [PRIVACY_POLICY.md](PRIVACY_POLICY.md)
 ## License
 
 MIT License - 见 [LICENSE](LICENSE) 文件。
-
-> AI生成
