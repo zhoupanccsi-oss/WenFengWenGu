@@ -3,10 +3,10 @@ AIGC:
   ContentProducer: '001191110102MAD55U9H0F10002'
   ContentPropagator: '001191110102MAD55U9H0F10002'
   Label: '1'
-  ProduceID: 'a2d58491-5296-427f-9201-523fb7b8acb0'
-  PropagateID: 'a2d58491-5296-427f-9201-523fb7b8acb0'
-  ReservedCode1: 'ff5bcf0b-072b-43ea-82ba-027bf50fe06e'
-  ReservedCode2: 'ff5bcf0b-072b-43ea-82ba-027bf50fe06e'
+  ProduceID: '84dc44ae-e3a3-49f8-b68b-21413fadde72'
+  PropagateID: '84dc44ae-e3a3-49f8-b68b-21413fadde72'
+  ReservedCode1: '8b362a85-b1ce-4966-a343-65f001ac11f2'
+  ReservedCode2: '8b362a85-b1ce-4966-a343-65f001ac11f2'
 ---
 
 # 文峰文谷 (WenFengWenGu)
@@ -120,6 +120,11 @@ WenFengWenGu is being published on Google Play and currently needs **beta tester
 **It's completely free** — no ads, no in-app purchases, no subscriptions. No data is collected. Your device will only run a colored border around the screen edges.
 
 ### How to join
+
+**Step 0 — Request access:** Fill in the short sign-up form with your Gmail address (your Google account) to be added to the closed-testing list:
+👉 [WenFengWenGu Closed Testing Sign-up Form](https://docs.google.com/forms/d/e/1FAIpQLScjuZBTx7gTFLIj_RKR3wpHWKsd713BsUr2ufvYqn_ZYHgHlA/viewform?usp=publish-editor)
+
+> You must use a **Gmail / Google account** to participate. After you sign up, we'll add you to the tester list and you'll receive an invitation in your inbox. Then continue with the steps below.
 
 1. Open the test link on your Android device (Android 8.0+):
    - Web: https://play.google.com/apps/testing/com.wenfeng.wengu
