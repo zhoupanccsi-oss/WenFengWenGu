@@ -27,8 +27,8 @@ import java.util.concurrent.TimeUnit;
  * Overlay service — draws a dynamic colored border on all four screen edges.
  * <p>
  * Uses Beijing Time (UTC+8) as the sole reference, auto-converted worldwide.
- * Peak (Red): Beijing 09:00-12:00, 14:00-18:00
- * Off-peak (Green): all other times
+ * Peak (Red): Beijing 09:00-12:00, 14:00-18:00 (Mon–Fri only)
+ * Off-peak (Green): all other times, plus all day Sat & Sun
  * <p>
  * Checks current period every 30 seconds and switches color automatically.
  * Supports display on lock screen.
@@ -94,11 +94,19 @@ public class OverlayService extends Service {
 
     /**
      * Check if current time is within Beijing peak hours.
-     * Peak: 09:00-12:00, 14:00-18:00 (includes 09, excludes 12; includes 14, excludes 18)
+     * Peak: 09:00-12:00, 14:00-18:00, Monday–Friday only.
+     * Weekends (Saturday & Sunday) are all off-peak.
      */
     private boolean isPeakHour() {
         // Lock timezone to Beijing UTC+8
         Calendar bjCal = Calendar.getInstance(TimeZone.getTimeZone("Asia/Shanghai"));
+        int dayOfWeek = bjCal.get(Calendar.DAY_OF_WEEK);
+
+        // Saturday=7, Sunday=1 → all day off-peak
+        if (dayOfWeek == Calendar.SATURDAY || dayOfWeek == Calendar.SUNDAY) {
+            return false;
+        }
+
         int hour = bjCal.get(Calendar.HOUR_OF_DAY);
         int minute = bjCal.get(Calendar.MINUTE);
         // Convert to minutes for easy comparison

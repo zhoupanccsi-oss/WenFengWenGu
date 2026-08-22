@@ -3,10 +3,10 @@ AIGC:
   ContentProducer: '001191110102MAD55U9H0F10002'
   ContentPropagator: '001191110102MAD55U9H0F10002'
   Label: '1'
-  ProduceID: '76f50d26-4966-443f-b12b-9fc362b60874'
-  PropagateID: '76f50d26-4966-443f-b12b-9fc362b60874'
-  ReservedCode1: '261ce477-1f80-4f20-9119-670cca5a31bc'
-  ReservedCode2: '261ce477-1f80-4f20-9119-670cca5a31bc'
+  ProduceID: 'e1fefc23-1ed4-44f5-9d7d-bdd776d27e54'
+  PropagateID: 'e1fefc23-1ed4-44f5-9d7d-bdd776d27e54'
+  ReservedCode1: 'c4782985-f002-4b9e-908c-f2ac5928dee4'
+  ReservedCode2: 'c4782985-f002-4b9e-908c-f2ac5928dee4'
 ---
 
 # Google Play 上架素材清单
@@ -110,7 +110,8 @@ https://zhoupanccsi-oss.github.io/WenFengWenGu/
 |------|------|------|
 | AAB | app/build/outputs/bundle/release/app-release.aab | Google Play 上传包 |
 | Feature Graphic | WenFengWenGu/feature_graphic.png | 1024x500 商店横幅 |
-| 应用图标 | app/src/main/res/mipmap-xxxhdpi/ic_launcher.png | 512x512 图标 |
+| 应用图标 | play_assets/play_icon_512.png | 512x512 图标（ICON.png 缩放版） |
+| 商店截图1 | play_assets/screenshot_1_clean.png | 1280x2788 主界面（已移除捐赠按钮） |
 
 ## 6. 内容分级 (IARC问卷回答)
 

@@ -142,19 +142,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Update current Beijing time and peak/off-peak period in real time
+     * Update current Beijing time and peak/off-peak period in real time.
+     * Weekends (Sat & Sun) are all off-peak.
      */
     private void updatePeriodInfo() {
         Calendar bjCal = Calendar.getInstance(TimeZone.getTimeZone("Asia/Shanghai"));
         int hour = bjCal.get(Calendar.HOUR_OF_DAY);
         int minute = bjCal.get(Calendar.MINUTE);
         int totalMin = hour * 60 + minute;
+        int dayOfWeek = bjCal.get(Calendar.DAY_OF_WEEK);
 
-        boolean isPeak = (totalMin >= 540 && totalMin < 720) || (totalMin >= 840 && totalMin < 1080);
+        boolean isWeekend = dayOfWeek == Calendar.SATURDAY || dayOfWeek == Calendar.SUNDAY;
+        boolean isPeak = !isWeekend && ((totalMin >= 540 && totalMin < 720) || (totalMin >= 840 && totalMin < 1080));
 
         String timeStr = String.format("%02d:%02d", hour, minute);
         String periodStr = isPeak ? "Peak Hours" : "Off-Peak Hours";
         String priceHint = isPeak ? "Full Price" : "50% of Peak Price";
+        if (isWeekend) {
+            priceHint = "Weekend Off-Peak (50%)";
+        }
 
         tvPeriod.setText(String.format(
                 "Beijing Time %s\nCurrent: %s\nPrice: %s",
